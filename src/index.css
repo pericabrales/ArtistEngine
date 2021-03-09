@@ -11,3 +11,63 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #0099cc;
+  position: relative;
+  top: 60px;
+}
+
+#siteTitle{
+  background-color: purple;
+  position: relative;
+  top: -20px;
+  height: 90px;
+  text-align: center;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #0099cc;
+}
+
+#siteTitle h1{
+  color:#00ff99;
+  position: relative;
+  top: 10px;
+  font-size: 45px;
+}
+
+#navhome{
+  background-color: #0099cc;
+}
+
+#navhome li {
+  float: left; 
+  background-color: #0099cc;
+  position: relative;
+  bottom: 70px;
+  margin-left: 50px;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+#navBar{
+  background-color: #0099cc;
+  position: relative;
+ 
+}
+
+#homeText h1{
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.active-link{
+  color: black;
+ font-size: 29px;
+ position: relative;
+ bottom: 5px;
+}
