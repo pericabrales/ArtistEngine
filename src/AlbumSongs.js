@@ -64,3 +64,5 @@ function AlbumSongs({album}){
 
     }, [album]);
 }
+
+export default AlbumSongs;
