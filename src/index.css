@@ -50,14 +50,14 @@ code {
 }
 
 #topHr{
-  height: 18px;
+  height: 12px;
   background-color: #e6b800;
   position: relative;
   top: -42px;
 }
 
 #bottomHr{
-  height: 18px;
+  height: 12px;
   background-color: #e6b800;
   position: relative;
   bottom: 100px;
