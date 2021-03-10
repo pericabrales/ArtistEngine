@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch } from 'react-router-dom';
 
 import HomePage from './Home'
-import AlbumSongs from './AlbumSongs';
+import AlbumSongs from './AlbumSongsSearch';
 
 function Home(){
   return (
@@ -17,7 +17,7 @@ function App() {
         <Home />
       </Route>
       <Route path="/albums/tracks">
-        <AlbumSongs />
+        <AlbumSongs album={"5U5rt98q8Jqx4lP3RdqYfO"}/>
       </Route>
       
     </Switch>

@@ -7,7 +7,7 @@ import fetch from 'isomorphic-unfetch';
 import {css} from '@emotion/react';
 
 //get the tracks on the album clicked
-function AlbumSongs({album}){
+function AlbumSongsSearch({album}){
     //push onto the stack
     const history = useHistory();
     //var and setter for the album we're going to pass into the api
@@ -58,11 +58,32 @@ function AlbumSongs({album}){
             //making sure we haven't had an ignore happen
             if(!ignore){
                 //set our response to the stuff we got in the json
-                //setRepos(callResponse.)
+                setRepos(callResponse.items || []);
+                console.log("==repos: ", callResponse.items);
             }
         }
 
+        //If we were given an album number (which we should have, this is just a fail safe)
+        if(album){
+            //call the async function
+            fetchAlbumSongs();
+        }
+
+        //clean up function called
+        return () => {
+            controller.abort();
+            ignore = true;
+        }
+
     }, [album]);
+
+    return(
+        <div id="album-songs-search">
+            {/* {repos.map(i => 
+                <AlbumSongsCard props={i} />    
+            )} */}
+        </div>
+    );
 }
 
-export default AlbumSongs;
+export default AlbumSongsSearch;
