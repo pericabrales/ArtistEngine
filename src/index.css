@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #751aff;
 }
 
 code {
@@ -24,7 +25,7 @@ code {
 #siteTitle{
   background-color: #a64dff;
   position: relative;
-  top: -30px;
+  top: -35px;
   height: 100px;
   text-align: center;
   -webkit-text-stroke-width: 2px;
@@ -48,17 +49,30 @@ code {
   font-size: 55px;
 }
 
+#topHr{
+  height: 18px;
+  background-color: #e6b800;
+  position: relative;
+  top: -42px;
+}
+
+#bottomHr{
+  height: 18px;
+  background-color: #e6b800;
+  position: relative;
+  bottom: 100px;
+}
+
 #navhome{
   background-color: #0099cc;
   position: relative;
-  top: -30px;
+  top: -51px;
   padding: 0;
   height: 50px;
   width: 100%;
   float: left;
   margin: 0 0 3em 0;
   list-style: none;
-  border: 5px solid #e6b800;
 }
 
 #navhome li {
