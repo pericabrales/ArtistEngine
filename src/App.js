@@ -1,14 +1,18 @@
 import './App.css';
 import { Route, Switch, Redirect, useLocation } from 'react-router-dom';
 import queryString from 'query-string';
+import {useDispatch, useSelector} from 'react-redux';
+
+import {addToken} from './actions/actions';
 
 import RedirectPage from './RedirectPage';
 import NotFound from './NotFound';
 import HomePage from './Home'
-import AlbumSongs from './AlbumSongsSearch';
+import AlbumSongsSearch from './AlbumSongsSearch';
 import Logins from './Login'
 import Album from './Albums'
-import AuthToken from './AuthToken';
+import { getToken } from './selectors/selector';
+//import AuthToken from './AuthToken';
 
 function Home(){
   return (
@@ -32,9 +36,37 @@ function useQueryString() {
   return queryString.parse(useLocation().search);
 }
 
+//grabbing the token and throwing it into the state so we can grab it from anywhere
+function AuthToken(){
+  const authHeader = window.location.hash.substring(1).split("&").reduce(function(curUrl, char) {
+      if(char){
+        var newChar = char.split("=");
+        curUrl[newChar[0]] = decodeURIComponent(newChar[1]);
+      }
+      return curUrl;
+    }, {});
+  
+    console.log("current url: ", authHeader.access_token);
+
+    const dispatch = useDispatch();
+
+    if(authHeader.access_token){
+      console.log("access token: ", authHeader.access_token)
+
+      const token = addToken(authHeader.access_token, authHeader.token_type);
+      dispatch(token);
+
+      console.log("dispatched token");
+    }
+}
+
 function App() {
   //collects the access token and puts it in the state for use later
   AuthToken();
+
+  //grabbing the token
+  // const token = useSelector(getToken);
+  // console.log("token in app: ", token);
 
   return (
     <Switch>
@@ -47,10 +79,11 @@ function App() {
       <Route exact path="/albums">
         <Albums query={useQueryString().q}/>
       </Route>
-      <Route path="/albums/tracks">
-        {/* currently putting in an album id for testing */}
-        <AlbumSongs album={"5U5rt98q8Jqx4lP3RdqYfO"}/>
-      </Route>
+      {/* This doesn't work for some reason. Have to go through Albums */}
+      {/* <Route path="/albums/tracks">
+        
+        <AlbumSongsSearch album={"5U5rt98q8Jqx4lP3RdqYfO"} />
+      </Route> */}
       <Route path="/redirect">
         <RedirectPage/>
       </Route>

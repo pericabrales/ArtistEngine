@@ -1,9 +1,20 @@
 import React from 'react';
 
-function AlbumSongsCard({props}){
+import {useSelector} from 'react-redux';
+import {getSongsFromAlbum} from './selectors/selector';
+
+
+function AlbumSongsCard(){
+    const songList = useSelector(getSongsFromAlbum);
+    //songs is the internal array you have to reference to be able to grab all the information on the songs
+    console.log("songs we have gotten: ", songList.songs);
+
     return (
         <div id="album-songs-card">
-            <h1>{props.track_number}: {props.name}</h1>
+            {songList.songs.map(s => (
+                <h1>{s.name}</h1>
+            ))}
+            
         </div>
     );
 }
