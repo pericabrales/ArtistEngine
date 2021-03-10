@@ -9,7 +9,6 @@ class Nav extends React.Component{
         return(
             <div id="nav">
                    <Header/>
-                    <hr id="topHr"></hr>
                 <div>
                     <ul id="navhome">
                         <li>
