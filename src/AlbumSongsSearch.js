@@ -1,10 +1,12 @@
 import React from 'react';
 
-import {Route, NavLink, useRouteMatch, Redirect} from 'react-router-dom';
+// import {Route, NavLink, useRouteMatch, Redirect} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import fetch from 'isomorphic-unfetch';
-import {css} from '@emotion/react';
+//import {css} from '@emotion/react';
+
+import AlbumSongsCard from './AlbumSongsCard';
 
 //get the tracks on the album clicked
 function AlbumSongsSearch({album}){
