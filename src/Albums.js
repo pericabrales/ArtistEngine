@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
+import fetch from 'isomorphic-unfetch';
 
 import Nav from './Nav';
 
 import './index.css';
 
+function Albums({query}){
+    
 
-class Home extends React.Component{
-
-    render(){
         return(
             <div>
                 <Nav/>
@@ -16,7 +16,7 @@ class Home extends React.Component{
             </div>
   
         )
-    }
+    
 }
 
-export default Home;
+export default Albums;

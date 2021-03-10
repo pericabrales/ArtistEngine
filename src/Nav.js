@@ -2,21 +2,17 @@ import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
 
 import './index.css';
-    
+import Header from './Header'
 
 class Nav extends React.Component{
     render(){
         return(
             <div id="nav">
-                    <div id="siteTitle">
-                        <h1 id="title"> Artist Engine </h1>
-                        <h2 id="title-text"> Start Exploring Music... </h2>
-                    </div>
-                    <hr id="topHr"></hr>
+                   <Header/>
                 <div>
                     <ul id="navhome">
                         <li>
-                            <NavLink to='/' id="navStyle" exact activeClassName="active-link">
+                            <NavLink to='/search' id="navStyle" exact activeClassName="active-link">
                                 Home
                             </NavLink> 
                         </li>

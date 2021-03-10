@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #751aff;
+  background-color: #4700b3;
 }
 
 code {
@@ -22,15 +22,28 @@ code {
   top: 60px;
 }
 
+#login{
+  font-size: 80px;
+  position: relative;
+  top: 100px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #0099cc;
+  font-family: 'Anton', sans-serif;
+  color:#00ff99;
+  border-radius: 50px;
+  border: 10px solid #e6b800;
+}
+
 #siteTitle{
   background-color: #a64dff;
   position: relative;
   top: -35px;
   height: 100px;
   text-align: center;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width:2px;
   -webkit-text-stroke-color: #0099cc;
   font-family: 'Anton', sans-serif;
+ 
 }
 
 #title-text {

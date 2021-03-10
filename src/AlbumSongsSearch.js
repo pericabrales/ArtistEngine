@@ -7,6 +7,8 @@ import fetch from 'isomorphic-unfetch';
 //import {css} from '@emotion/react';
 
 import AlbumSongsCard from './AlbumSongsCard';
+import Nav from './Nav';
+
 
 //get the tracks on the album clicked
 function AlbumSongsSearch({album}){
@@ -65,10 +67,17 @@ function AlbumSongsSearch({album}){
             }
         }
 
+    // var request = require("request");
+    // var token = "Bearer"
+    // var url = "https://api.spotify.com/v1/albums/${album}/tracks"
+    
+
         //If we were given an album number (which we should have, this is just a fail safe)
         if(album){
             //call the async function
             fetchAlbumSongs();
+
+
         }
 
         //clean up function called
@@ -81,6 +90,7 @@ function AlbumSongsSearch({album}){
 
     return(
         <div id="album-songs-search">
+            <Nav/>
             {/* {repos.map(i => 
                 <AlbumSongsCard props={i} />    
             )} */}
