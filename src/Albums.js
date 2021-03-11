@@ -4,7 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import Nav from './Nav';
 
 import './index.css';
-import AlbumSongsSearch from './AlbumSongsSearch';
+import AlbumSearch from './AlbumSearch';
 
 function Albums({query}){
 
@@ -12,7 +12,7 @@ function Albums({query}){
             <div>
                 <Nav/>
                 {/* this is here for testing purposes. Currently not able to call from the App page and still use correctly*/}
-                <AlbumSongsSearch album={'3PYk8e7eo2t5CA1Y3AvhaG'}/>
+                <AlbumSearch album={'246dkjvS1zLTtiykXe5h60'} />
             </div>
   
         )

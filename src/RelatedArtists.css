@@ -1,0 +1,35 @@
+#related-artists-card{
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+
+#related-artists-search{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+#artist-image{
+    /* background-color: aliceblue; */
+}
+
+#artist-name{
+    margin-bottom: 50px;
+}
+h1{
+    display: block;
+    position: relative;
+    right: 35%;
+}
+img{
+    height: 350px;
+    width: 350px;
+}
+
+#album-name{
+    display: inline-block;
+    text-align: center;
+    color: white;
+}

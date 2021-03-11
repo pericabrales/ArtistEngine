@@ -172,3 +172,33 @@ code {
   box-shadow: 5px 5px #401775;
 }
 
+#albumImage img{
+  border: 14px solid #0099cc;
+
+}
+#albumImage{
+  float: left;
+  width: 30%;
+  padding: 5px;
+  margin-left: 40px;
+}
+
+#album-songs-search::after{
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#linkAlbum, #linkRelatedArtists{
+  color: #e6b800;
+  text-decoration: none;
+
+}
+
+#linkAlbum:hover, #linkRelatedArtists:hover{
+  color: #e6b800;
+  font-weight: bold;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color:  #00ff99;
+  text-shadow: 3px 3px grey;
+}

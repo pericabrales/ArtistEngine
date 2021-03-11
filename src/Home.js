@@ -7,29 +7,29 @@ import Nav from './Nav';
 
 import './index.css';
 
-import SpotifyWebApi from 'spotify-web-api-js';
+// import SpotifyWebApi from 'spotify-web-api-js';
 
-const spotifyApi = new SpotifyWebApi();
-spotifyApi.setAccessToken('BQCHs6YJbLSFNhrDxYILIDcjXUVzCPGeWtoEkrI9rUthe0GqM8lyOEguzXPr3kxtnXYeKcaerkpcZBLEifQ73irLN6YLgMoDHSno2F6IRgLwN-pqdvBzktFWVYjD5iBim12twgoa0d_wHCk');
+// const spotifyApi = new SpotifyWebApi();
+// spotifyApi.setAccessToken('BQCHs6YJbLSFNhrDxYILIDcjXUVzCPGeWtoEkrI9rUthe0GqM8lyOEguzXPr3kxtnXYeKcaerkpcZBLEifQ73irLN6YLgMoDHSno2F6IRgLwN-pqdvBzktFWVYjD5iBim12twgoa0d_wHCk');
 
-spotifyApi.getArtistAlbums('246dkjvS1zLTtiykXe5h60', function (err, data) {
-    if (err) console.error(err);
-    else console.log('Artist albums', data);
-  });
+// spotifyApi.getArtistAlbums('246dkjvS1zLTtiykXe5h60', function (err, data) {
+//     if (err) console.error(err);
+//     else console.log('Artist albums', data);
+//   });
 
-  spotifyApi
-  .getArtistAlbums('246dkjvS1zLTtiykXe5h60', { limit: 10 })
-  .then(function (data) {
-    return data.items.map(function (a) {
-      return a.id;
-    });
-  })
-  .then(function (albums) {
-    return spotifyApi.getAlbums(albums);
-  })
-  .then(function (data) {
-    console.log("POSTY", data);
-  });
+//   spotifyApi
+//   .getArtistAlbums('246dkjvS1zLTtiykXe5h60', { limit: 10 })
+//   .then(function (data) {
+//     return data.items.map(function (a) {
+//       return a.id;
+//     });
+//   })
+//   .then(function (albums) {
+//     return spotifyApi.getAlbums(albums);
+//   })
+//   .then(function (data) {
+//     console.log("POSTY", data);
+//   });
 
 
 class Home extends React.Component{
@@ -57,13 +57,17 @@ class Home extends React.Component{
                 
                  <div id="div-albums">
                   <button type="submit" id="btn-albums">
-                    Albums
+                       <NavLink id="linkAlbum" to='/albums'>
+                            Albums
+                            </NavLink>
                   </button>
                  </div>
 
                 <div id="div-artists">
                   <button type="submit" id="btn-artists">
-                    Related Artists
+                    <NavLink id="linkRelatedArtists" to='/related-artists'>
+                      Related Artists
+                    </NavLink>
                   </button>
                  </div>
                </div>
