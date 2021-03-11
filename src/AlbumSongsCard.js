@@ -11,24 +11,13 @@ function sleep(ms){
     }while(curDate - date < ms);
 }
 
-function AlbumSongsCard(){
+function AlbumSongsCard({song}){
 
-    //    const songList = useSelector(getSongsFromAlbum);
-    //     //songs is the internal array you have to reference to be able to grab all the information on the songs
-    //     console.log("songs we have gotten: ", songList.songs);
-
-    //     sleep(5000);
-    //     console.log("after sleep");
-
-    // const songList = useSelector(getSongsFromAlbum);
-    // //songs is the internal array you have to reference to be able to grab all the information on the songs
-    // console.log("songs we have gotten: ", songList.songs);
+    console.log("songs: ", song);
 
     return (
         <div id="album-songs-card">
-            {/* {songList.songs.map(s => (
-                <h1>{s.name}</h1>
-            ))} */}
+            <h1>{song.name}</h1>
             
         </div>
     );
