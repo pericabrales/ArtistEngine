@@ -33,7 +33,7 @@ spotifyApi.getArtistAlbums('246dkjvS1zLTtiykXe5h60', function (err, data) {
 
 
 class Home extends React.Component{
-    
+  
 
     render(){
         return(
