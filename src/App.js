@@ -11,8 +11,9 @@ import HomePage from './Home'
 import AlbumSongsSearch from './AlbumSongsSearch';
 import Logins from './Login'
 import Album from './Albums'
-import RelatedArtists from './RelatedArtists';
-import { getToken } from './selectors/selector';
+import RelatedArtistsSearch from './RelatedArtistsSearch';
+import Nav from './Nav';
+
 //import AuthToken from './AuthToken';
 
 function Home(){
@@ -81,7 +82,10 @@ function App() {
         <Albums query={useQueryString().q}/>
       </Route>
       <Route exact path="/related-artists">
-        <RelatedArtists query={useQueryString().q}/>
+        <div>
+          <Nav/>
+          <RelatedArtistsSearch curArtist={'246dkjvS1zLTtiykXe5h60'}/>
+        </div>
       </Route>
       <Route path="/redirect">
         <RedirectPage/>

@@ -12,7 +12,7 @@ function RelatedArtistsCard({artist}){
 
     return (
         <div id="related-artists-card">
-            <div id="artist-image">
+            <div id="artist-image-div">
                 <img src={artist.images[0].url}  width="300" alt="albumPic"/>
                 <h1 id="artist-name">{artist.name}</h1>
             </div>  

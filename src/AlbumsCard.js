@@ -15,15 +15,7 @@ function AlbumsCard({song}){
         <div id="album-songs-card">
             <div id="albumImage">
             <img src={song.images[0].url}  width="300" alt="albumPic"/>
-            <button onClick={() => {
-                console.log("clicked");
-                <Route path="/tracks">
-                    <AlbumSongsSearch album={albumId[2]}/>
-                </Route>
-            }}>
-                {song.name}
-            </button>
-            {/* <h1>{song.name}</h1> */}
+            <h1>{song.name}</h1>
             </div>  
         </div>
     );
