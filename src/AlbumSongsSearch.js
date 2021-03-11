@@ -14,22 +14,10 @@ import {getAlbumSongs, albumSongsSuccess, albumSongsError} from './actions/actio
 import AlbumSongsCard from './AlbumSongsCard';
 import Nav from './Nav';
 
-import SpotifyWebApi from 'spotify-web-api-js';
-import Q from 'q';
-
-// const spotifyApi = new SpotifyWebApi();
-// spotifyApi.setAccessToken('BQCHs6YJbLSFNhrDxYILIDcjXUVzCPGeWtoEkrI9rUthe0GqM8lyOEguzXPr3kxtnXYeKcaerkpcZBLEifQ73irLN6YLgMoDHSno2F6IRgLwN-pqdvBzktFWVYjD5iBim12twgoa0d_wHCk');
-
-var spotifyApi = new SpotifyWebApi();
-
 //get the tracks on the album clicked
 function AlbumSongsSearch({album}){
     const token = useSelector(getToken);
     console.log("token found using selector: ", token);
-
-    
-    spotifyApi.setAccessToken(token[0].access_token);
-    //spotifyApi.setPromiseImplementation(Q);
 
     console.log("album id: ", album);
 
