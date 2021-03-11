@@ -1,52 +1,92 @@
 import React from 'react';
 
 // import {Route, NavLink, useRouteMatch, Redirect} from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux';
 import {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
 import fetch from 'isomorphic-unfetch';
 //import {css} from '@emotion/react';
 
+import {getSongsFromAlbum, getToken} from './selectors/selector';
+import {getAlbumSongs, albumSongsSuccess, albumSongsError} from './actions/actions';
+
+
 import AlbumSongsCard from './AlbumSongsCard';
 import Nav from './Nav';
 
+import SpotifyWebApi from 'spotify-web-api-js';
+import Q from 'q';
+
+// const spotifyApi = new SpotifyWebApi();
+// spotifyApi.setAccessToken('BQCHs6YJbLSFNhrDxYILIDcjXUVzCPGeWtoEkrI9rUthe0GqM8lyOEguzXPr3kxtnXYeKcaerkpcZBLEifQ73irLN6YLgMoDHSno2F6IRgLwN-pqdvBzktFWVYjD5iBim12twgoa0d_wHCk');
+
+var spotifyApi = new SpotifyWebApi();
 
 //get the tracks on the album clicked
 function AlbumSongsSearch({album}){
-    //push onto the stack
-    const history = useHistory();
-    //var and setter for the album we're going to pass into the api
-    const [curAlbum, setCurAlbum] = useState(album || "");
-    //repos to render the new thing to the page
-    const [repos, setRepos] = useState([]);
-    //SPACE FOR LOADING STATE IF WE WANT
+    const token = useSelector(getToken);
+    console.log("token found using selector: ", token);
 
-    //SPACE FOR ERROR IF WE WANT
+    
+    spotifyApi.setAccessToken(token[0].access_token);
+    //spotifyApi.setPromiseImplementation(Q);
 
-    //use useEffect to perform an http call to the api
+    console.log("album id: ", album);
+
+        //history so things can be pushed onto the stack
+        const history = useHistory();
+        //the var and setter for the query we're going to pass into the API
+        const [ curQuery, setCurQuery ] = useState(album || "");
+        //repos is what we'll use to render something new to the page
+        const [repos, setRepos] = useState([]);
+        //loadingState will be used to keep track of if the data is still loading
+        //need for the progress bar
+        const [loadingState, setLoadingState] = useState(false); //start at false until search is pressed
+        //need isError to keep track of if there is an error
+        //show the error screen
+        const [isError, setIsError] = useState(false); //also false at start until error detected
+    
+    //useEffect is needed to perform an http call
     useEffect(() => {
         //create a closure
         let ignore = false;
 
-        //instance of controller that lets us cancel a call
-        const controller = new AbortController;
+        //instance of the built in controller that will allow us to cancel a call (abort)
+        const contr = new AbortController;
 
-        //fetch call for the api results
+        //need an await for a fetch call to an api
+        //therefore need an async function to fetch the search results
         async function fetchAlbumSongs(){
-            //hold json object we're gonna get back
-            let callResponse = {};
+            //will hold the js object that is returned from the json file
+            let jsResponse = {};
 
-            //try catch for api call in case an exception happens
+            //because the search button has been pressed and we're getting information, set the loading bar to true
+            setLoadingState(true);
+            //gotta set error to false because it could be left over from a previous error
+            setIsError(false);
+
+            //we use a try catch to call the api, and catch an exception if it happens
             try{
-                //if i need the client key ill put it here
-                
-                //const that holds the call to the api
-                const apiResp = await fetch(`https://api.spotify.com/v1/albums/${album}/tracks`,
-                {signal: controller.signal});
+                const req = new Request(`https://api.spotify.com/v1/albums/${album}/tracks`, {
+                    headers: new Headers({
+                        'Authorization': token[0].token_type + ' ' + token[0].access_token
+                    })
+                });
 
-                console.log("Full api call: ", apiResp);
+               jsResponse = await fetch(req).then(res => {
+                    if(res.statusText === "Unauthorized"){
+                        window.location.href = './';
+                    }
+                    return res.json();
+                }).then(res => {
+                    console.log("res items: ", res.items);
+                    return res.items;
+                }).catch(e => {
+                    //dispatch(albumSongsError(e));
+                });
 
-                //parse the json we got
-                callResponse = await apiResp.json();
+                console.log("full api call: ", jsResponse);
+
             }catch(e){
                 if(e instanceof DOMException){
                     //show the request has been aported
@@ -54,48 +94,51 @@ function AlbumSongsSearch({album}){
                 }
                 else{
                     //we have to pull up the error screen
-                    //setIsError(true);
-                    console.log("pull up error screen");
+                    setIsError(true);
                 }
             }
 
-            //making sure we haven't had an ignore happen
+            //we make sure an ignore hasn't happened
             if(!ignore){
                 //set our response to the stuff we got in the json
-                setRepos(callResponse.items || []);
-                console.log("==repos: ", callResponse.items);
-            }
+                setRepos(jsResponse || []);
+                //set back to false because we have our stuff
+                setLoadingState(false);
+                console.log("==repos: ", jsResponse);
+            } 
         }
 
-    // var request = require("request");
-    // var token = "Bearer"
-    // var url = "https://api.spotify.com/v1/albums/${album}/tracks"
-    
-
-        //If we were given an album number (which we should have, this is just a fail safe)
+        //if we have a query, call the function above to search for it
         if(album){
             //call the async function
             fetchAlbumSongs();
-
-
         }
 
-        //clean up function called
+        //side effect cleanup function called
         return () => {
-            controller.abort();
+            //trigger the signal, which fetch will recognize, and then abort the query
+            contr.abort();
+            //finally ignore will be set to true so we can ignore this search
             ignore = true;
         }
 
     }, [album]);
 
+    
+
     return(
         <div id="album-songs-search">
-            <Nav/>
-            {/* {repos.map(i => 
-                <AlbumSongsCard props={i} />    
-            )} */}
+            {/* <Nav/> */}
+            {/* <AlbumSongsCard songs={newAlbum}/>     */}
+            {repos.map(i => 
+                <AlbumSongsCard song={i}/>    
+            )}
         </div>
     );
 }
+
+// function getSpotifyAlbumSongs(data){
+//     newAlbum = data;
+// }
 
 export default AlbumSongsSearch;
