@@ -7,7 +7,6 @@ import './index.css';
 import AlbumSongsSearch from './AlbumSongsSearch';
 
 function Albums({query}){
-    
 
         return(
             <div>

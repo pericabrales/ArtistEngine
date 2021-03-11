@@ -34,7 +34,7 @@ export const getAlbumSongs = (access_token, token_type, album_id) => {
                 'Authorization': token_type + ' ' + access_token
             })
         });
-
+        console.log("req: ", req);
         //dispatch()
         
         fetch(req).then(res => {
@@ -43,6 +43,7 @@ export const getAlbumSongs = (access_token, token_type, album_id) => {
             }
             return res.json();
         }).then(res => {
+            console.log("res items: ", res.items);
             dispatch(albumSongsSuccess(res.items));
         }).catch(e => {
             dispatch(albumSongsError(e));

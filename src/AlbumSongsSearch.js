@@ -8,20 +8,12 @@ import fetch from 'isomorphic-unfetch';
 //import {css} from '@emotion/react';
 
 import {getSongsFromAlbum, getToken} from './selectors/selector';
-import {getAlbumSongs} from './actions/actions';
+import {getAlbumSongs, albumSongsSuccess, albumSongsError} from './actions/actions';
 
 
 import AlbumSongsCard from './AlbumSongsCard';
 import Nav from './Nav';
 
-
-// function sleep(ms){
-//     const date = Date.now();
-//     let curDate = null;
-//     do{
-//         curDate = Date.now();
-//     }while(curDate - date < ms);
-// }
 
 //get the tracks on the album clicked
 function AlbumSongsSearch({album}){
@@ -34,7 +26,6 @@ function AlbumSongsSearch({album}){
     const albumSongsGet = getAlbumSongs(token[0].access_token, token[0].token_type, album);
     dispatch(albumSongsGet);
     
-    // sleep(3000);
 
     // const songs = useSelector(getSongsFromAlbum);
     // console.log("songs in search: ", songs);

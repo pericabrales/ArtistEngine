@@ -10,14 +10,13 @@ export const albumsReducer = (state = {}, action) => {
     }
   };
 
-  export function albumSongsReducer(state = [], action){
+  export function albumSongsReducer(state = {}, action){
     console.log("action type: ", action.type);
     switch(action.type){
       case ALBUM_SONGS_SUCCESS:
         return{
           ...state,
           songs: action.songs
-
         };
       case ALBUM_SONGS_ERROR:
         return{
