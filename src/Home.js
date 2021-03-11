@@ -31,11 +31,13 @@ spotifyApi.getArtistAlbums('246dkjvS1zLTtiykXe5h60', function (err, data) {
     console.log("POSTY", data);
   });
 
+  spotifyApi.getArtistAlbums('246dkjvS1zLTtiykXe5h60', function (err, data) {
+    if (err) console.error(err);
+    else console.log('Artist albums', data);
+  });
 
 class Home extends React.Component{
-  
-
-    render(){
+      render(){
         return(
             <div>
                 <Nav/>
@@ -51,7 +53,9 @@ class Home extends React.Component{
                <div id="search-categories">
                  <div id="div-songs">
                   <button type="submit" id="btn-songs">
-                    Songs
+                    <NavLink id="linkSong" to='/songs'>
+                       Songs
+                     </NavLink>
                   </button>
                  </div>
                 

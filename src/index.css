@@ -193,13 +193,13 @@ code {
   display: table;
 }
 
-#linkAlbum{
+#linkAlbum, #linkSong {
   color: #e6b800;
   text-decoration: none;
 
 }
 
-#linkAlbum:hover{
+#linkAlbum:hover, #linkSong:hover{
   color: #e6b800;
   font-weight: bold;
   -webkit-text-stroke-width: 0.5px;
@@ -212,5 +212,17 @@ code {
   font-family: 'Anton', sans-serif;
   font-size: 25px;
   position: relative;
+  justify-content: center;
+}
+
+#album-songs-card {
+  text-align: center;
+} 
+  
+#song-name {
+  color: white;
+  font-family: 'Anton', sans-serif;
+  font-size: 25px;
+  position: relative;
   justify-content: center;
 }

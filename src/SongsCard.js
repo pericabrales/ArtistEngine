@@ -1,6 +1,5 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
-import {getSongsFromAlbum} from './selectors/selector';
+
 function sleep(ms){
     const date = Date.now();
     let curDate = null;
@@ -8,16 +7,16 @@ function sleep(ms){
         curDate = Date.now();
     }while(curDate - date < ms);
 }
-function AlbumsCard({song}){
+function SongsCard({song}){
     console.log("songs: ", song);
 
     return (
-        <div id="album-songs-card">
-            <div id="albumImage">
-            <img src={song.images[0].url}  width="300" alt="albumPic"/>
+        <div id="artist-songs-card">
+            <div id="songImage">
+            <img src={song.images[0].url}  width="300" alt="songPic"/>
             <h1 id="song-name"> {song.name}</h1> 
             </div>  
         </div>
     );
 }
-export default AlbumsCard;
+export default SongsCard;

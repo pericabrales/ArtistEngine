@@ -11,6 +11,7 @@ import HomePage from './Home'
 import AlbumSongsSearch from './AlbumSongsSearch';
 import Logins from './Login'
 import Album from './Albums'
+import Song from './Songs'
 import { getToken } from './selectors/selector';
 //import AuthToken from './AuthToken';
 
@@ -18,6 +19,12 @@ function Home(){
   return (
     <HomePage/>
   );
+}
+
+function Songs(){
+  return (
+    <Song/>
+  )
 }
 
 function Albums(){
@@ -75,6 +82,9 @@ function App() {
       </Route>
       <Route exact path="/search">
         <Home />
+      </Route>
+      <Route exact path="/songs">
+        <Songs query={useQueryString().q}/>
       </Route>
       <Route exact path="/albums">
         <Albums query={useQueryString().q}/>
