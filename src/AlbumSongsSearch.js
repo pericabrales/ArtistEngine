@@ -1,4 +1,5 @@
 import React from 'react';
+import './AlbumSongs.css';
 
 // import {Route, NavLink, useRouteMatch, Redirect} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
@@ -112,12 +113,10 @@ function AlbumSongsSearch({album}){
 
     }, [album]);
 
-    
 
     return(
         <div id="album-songs-search">
-            {/* <Nav/> */}
-            {/* <AlbumSongsCard songs={newAlbum}/>     */}
+            <h1 id="album-name">Songs on </h1>
             {repos.map(i => 
                 <AlbumSongsCard song={i}/>    
             )}

@@ -1,15 +1,10 @@
 import React from 'react';
 
+import './AlbumSongs.css';
+
 import {useSelector} from 'react-redux';
 import {getSongsFromAlbum} from './selectors/selector';
 
-function sleep(ms){
-    const date = Date.now();
-    let curDate = null;
-    do{
-        curDate = Date.now();
-    }while(curDate - date < ms);
-}
 
 function AlbumSongsCard({song}){
 
@@ -17,7 +12,10 @@ function AlbumSongsCard({song}){
 
     return (
         <div id="album-songs-card">
-            <h1>{song.name}</h1>
+            <div id="song-num-name">
+                <h2 id="track-num">{song.track_number}.</h2>
+                <h1 id="track-name">{song.name}</h1>
+            </div>
             
         </div>
     );
