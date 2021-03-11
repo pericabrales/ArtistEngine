@@ -7,16 +7,15 @@ function sleep(ms){
         curDate = Date.now();
     }while(curDate - date < ms);
 }
+
 function SongsCard({song}){
     console.log("songs: ", song);
 
     return (
-        <div id="artist-songs-card">
-            <div id="songImage">
-                {/* Songs dont have images associated with them! */}
-            {/* <img src={song.images[0].url}  width="300" alt="songPic"/> */}
-            <h1 id="song-name"> {song.name}</h1> 
-            </div>  
+        <div id="all-tracks">
+            <div id="album-songs-card">  
+                <h1 id="song-name"> {song.name}</h1> 
+            </div>
         </div>
     );
 }

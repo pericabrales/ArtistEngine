@@ -226,3 +226,28 @@ code {
   position: relative;
   justify-content: center;
 }
+
+#album-songs-search {
+  position: relative;
+  bottom: 115px;
+}
+
+#artist-songs-search {
+  position: relative;
+  bottom: 130px;
+  background-color: #0099cc;
+  padding: 5px;
+  justify-content: center;
+}
+
+#page-title {
+  align-items: center;
+  text-align: center;
+  position: relative;
+  top: -100px;
+  font-family: 'Anton', sans-serif;
+ color:#00ff99;
+  -webkit-text-stroke-width:2px;
+  -webkit-text-stroke-color: #0099cc;
+  font-size: 40px;
+}

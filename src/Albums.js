@@ -11,6 +11,7 @@ function Albums({query}){
         return(
             <div>
                 <Nav/>
+                <h3 id="page-title">Album Gallery</h3>
                 {/* this is here for testing purposes. Currently not able to call from the App page and still use correctly*/}
                 <AlbumSearch album={'246dkjvS1zLTtiykXe5h60'} />
             </div>

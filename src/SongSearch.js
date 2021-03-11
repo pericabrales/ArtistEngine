@@ -92,7 +92,7 @@ function SongSearch({songs}){
     }, [songs]);
     
     return(
-        <div id="album-songs-search">
+        <div id="artist-songs-search">
             {repos.map(i => 
                 <SongsCard song={i}/>    
             )}
