@@ -12,7 +12,7 @@ function Albums({query}){
             <div>
                 <Nav/>
                 {/* this is here for testing purposes. Currently not able to call from the App page and still use correctly*/}
-                <SongSearch album={'246dkjvS1zLTtiykXe5h60'} />
+                <SongSearch songs={'246dkjvS1zLTtiykXe5h60'} />
             </div>
   
         )

@@ -13,7 +13,8 @@ function SongsCard({song}){
     return (
         <div id="artist-songs-card">
             <div id="songImage">
-            <img src={song.images[0].url}  width="300" alt="songPic"/>
+                {/* Songs dont have images associated with them! */}
+            {/* <img src={song.images[0].url}  width="300" alt="songPic"/> */}
             <h1 id="song-name"> {song.name}</h1> 
             </div>  
         </div>

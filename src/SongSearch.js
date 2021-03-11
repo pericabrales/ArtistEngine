@@ -41,7 +41,7 @@ function SongSearch({songs}){
 
             //we use a try catch to call the api, and catch an exception if it happens
             try{
-                const req = new Request(`https://api.spotify.com/v1/artists/${songs}/top-tracks
+                const req = new Request(`https://api.spotify.com/v1/artists/${songs}/top-tracks?market=US
                 `, {
                     headers: new Headers({
                         'Authorization': token[0].token_type + ' ' + token[0].access_token
