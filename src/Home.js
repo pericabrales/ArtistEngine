@@ -57,7 +57,9 @@ class Home extends React.Component{
                 
                  <div id="div-albums">
                   <button type="submit" id="btn-albums">
-                    Albums
+                       <NavLink id="linkAlbum" to='/albums'>
+                            Albums
+                            </NavLink>
                   </button>
                  </div>
 

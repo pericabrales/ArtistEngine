@@ -17,8 +17,10 @@ function AlbumSongsCard({song}){
 
     return (
         <div id="album-songs-card">
-            <h1>{song.name}</h1>
-            
+            <div id="albumImage">
+            <img src={song.images[0].url}  width="300" alt="albumPic"/>
+            <h1> {song.name}</h1>
+            </div>  
         </div>
     );
 }
