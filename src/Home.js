@@ -35,7 +35,34 @@ class Home extends React.Component{
         return(
             <div>
                 <Nav/>
-               <div></div>
+               <div id="search-container">
+                <form action="/action_page.php" id="search-form">
+                  <input id="search-input" type="text" placeholder="Search.." name="search"/>
+                  <button id="search-icon" type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </form>
+               </div>
+
+               <div id="search-categories">
+                 <div id="div-songs">
+                  <button type="submit" id="btn-songs">
+                    Songs
+                  </button>
+                 </div>
+                
+                 <div id="div-albums">
+                  <button type="submit" id="btn-albums">
+                    Albums
+                  </button>
+                 </div>
+
+                <div id="div-artists">
+                  <button type="submit" id="btn-artists">
+                    Related Artists
+                  </button>
+                 </div>
+               </div>
             </div>
   
         )
