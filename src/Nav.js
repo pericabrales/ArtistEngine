@@ -23,7 +23,7 @@ class Nav extends React.Component{
                         </li>
                         <li>
                             <NavLink to='/albums' id="navStyle" activeClassName="active-link">
-                            Album
+                            
                             </NavLink>
                         </li>
                         <li>
