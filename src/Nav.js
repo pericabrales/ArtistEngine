@@ -13,22 +13,22 @@ class Nav extends React.Component{
                     <ul id="navhome">
                         <li>
                             <NavLink to='/search' id="navStyle" exact activeClassName="active-link">
-                                Home
+                         
                             </NavLink> 
                         </li>
                         <li>
                             <NavLink to='/songs' id="navStyle" activeClassName="active-link">
-                                Songs
+                             
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/albums' id="navStyle" activeClassName="active-link">
-                                Albums
+                           
                             </NavLink>
                         </li>
                         <li>
                             <NavLink to='/artists' id="navStyle" activeClassName="active-link">
-                                Artists
+                        
                             </NavLink>
                         </li>
                      </ul>  
