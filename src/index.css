@@ -172,6 +172,10 @@ code {
   box-shadow: 5px 5px #401775;
 }
 
+#album-songs-card {
+  text-align: center;
+}
+
 #albumImage img{
   border: 14px solid #0099cc;
 
@@ -201,4 +205,12 @@ code {
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color:  #00ff99;
   text-shadow: 3px 3px grey;
+}
+
+#song-name {
+  color: white;
+  font-family: 'Anton', sans-serif;
+  font-size: 25px;
+  position: relative;
+  justify-content: center;
 }
