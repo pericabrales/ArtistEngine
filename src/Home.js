@@ -9,9 +9,7 @@ import './index.css';
 
 
 class Home extends React.Component{
-  
-
-    render(){
+      render(){
         return(
             <div>
                 <Nav/>
@@ -27,7 +25,9 @@ class Home extends React.Component{
                <div id="search-categories">
                  <div id="div-songs">
                   <button type="submit" id="btn-songs">
-                    Songs
+                    <NavLink id="linkSong" to='/songs'>
+                       Songs
+                     </NavLink>
                   </button>
                  </div>
                 
