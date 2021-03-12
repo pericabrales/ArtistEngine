@@ -62,10 +62,11 @@ var test = "test";
                  </div>
 
                 <div id="div-artists">
-                  <button type="submit" id="btn-artists">
-                    <NavLink id="linkRelatedArtists" to='/related-artists'>
-                      Related Artists
-                    </NavLink>
+                  <button type="submit" id="btn-artists" onClick={() => (
+                    test = document.getElementById("search-input").value,
+                    history.push(`/related-artists/${test}`)
+                  )}>
+                    Related Artists
                   </button>
                  </div>
                </div>
