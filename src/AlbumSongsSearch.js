@@ -24,8 +24,8 @@ function AlbumSongsSearch({album}){
     const url = window.location.href.substring(1).split("/");
     console.log("url in album songs: ", url );
     
-    if(!album){
-        album = url[4];
+    if(album === ""){
+        album = url[5];
     }
 
     console.log("album id: ", album);
