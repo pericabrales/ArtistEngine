@@ -93,7 +93,7 @@ function App() {
       <Route exact path="/albums">
         <Albums query={useQueryString().q}/>
       </Route>
-      <Route exact path="/related-artists">
+      <Route path="/related-artists">
         <div>
           <Nav/>
           <RelatedArtists query={useQueryString().q}/>
