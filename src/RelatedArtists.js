@@ -60,8 +60,8 @@ function RelatedArtists({query}){
                     return res.json();
                 }).then(res => {
                     //to get down to the array that holds the ui, I had to go through a lot of arrays. I suggest a lot of trial and error to see what yours is
-                    console.log("res items: ", res.artists.items);
-                    return res.albums.items;
+                    console.log("res items: ", res.artists.items[0]);
+                    return res.artists.items[0];
                 }).catch(e => {
                     console.log("error");
                     //dispatch(albumSongsError(e));
@@ -82,13 +82,13 @@ function RelatedArtists({query}){
 
             //we make sure an ignore hasn't happened
             if(!ignore){
-                // console.log("==repo ui: ", jsResponse.uri);
-                // //getting the substrings of the uri part
-                // var albumId = jsResponse.uri.substring(1).split(":");
-                // console.log("albumId: ", albumId);
-                // //set our response to the albumId array
-                // setRepos(albumId || []);
-                // console.log("==repos: ", repos);
+                console.log("==repo ui: ", jsResponse.uri);
+                //getting the substrings of the uri part
+                var albumId = jsResponse.uri.substring(1).split(":");
+                console.log("albumId: ", albumId);
+                //set our response to the albumId array
+                setRepos(albumId || []);
+                console.log("==repos: ", repos);
             } 
         }
 
@@ -112,7 +112,7 @@ function RelatedArtists({query}){
         return(
             <div>
                 {/* this is here for testing purposes. Currently not able to call from the App page and still use correctly*/}
-                {/* <RelatedArtistsSearch curArtist={'246dkjvS1zLTtiykXe5h60'} /> */}
+                <RelatedArtistsSearch curArtist={repos[2]} />
             </div>
   
         )
