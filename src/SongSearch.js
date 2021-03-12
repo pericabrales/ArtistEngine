@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 
 // import {Route, NavLink, useRouteMatch, Redirect} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';

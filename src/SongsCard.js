@@ -1,12 +1,5 @@
 import React from 'react';
-
-function sleep(ms){
-    const date = Date.now();
-    let curDate = null;
-    do{
-        curDate = Date.now();
-    }while(curDate - date < ms);
-}
+import './index.css';
 
 function SongsCard({song}){
     console.log("songs: ", song);

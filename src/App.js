@@ -11,6 +11,9 @@ import HomePage from './Home'
 import AlbumSongsSearch from './AlbumSongsSearch';
 import Logins from './Login'
 import Album from './Albums'
+import RelatedArtistsSearch from './RelatedArtistsSearch';
+import Nav from './Nav';
+
 import Song from './Songs'
 import { getToken } from './selectors/selector';
 //import AuthToken from './AuthToken';
@@ -89,11 +92,18 @@ function App() {
       <Route exact path="/albums">
         <Albums query={useQueryString().q}/>
       </Route>
-      {/* This doesn't work for some reason. Have to go through Albums */}
-      {/* <Route path="/albums/tracks">
-        
-        <AlbumSongsSearch album={"5U5rt98q8Jqx4lP3RdqYfO"} />
-      </Route> */}
+      <Route exact path="/related-artists">
+        <div>
+          <Nav/>
+          <RelatedArtistsSearch curArtist={'246dkjvS1zLTtiykXe5h60'}/>
+        </div>
+      </Route>
+      <Route path="/album-songs">
+        <div>
+          <Nav/>
+          <AlbumSongsSearch album={'6t7956yu5zYf5A829XRiHC'}/>
+        </div>
+      </Route>
       <Route path="/redirect">
         <RedirectPage/>
       </Route>

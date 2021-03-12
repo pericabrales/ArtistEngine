@@ -99,12 +99,15 @@ function AlbumSearch({album}){
         }
     }, [album]);
     
+    var accessT = token[0].access_token;
+    console.log("access token: ", accessT);
+
     return(
         <div id="album-songs-search">
             {/* <Nav/> */}
             {/* <AlbumSongsCard songs={newAlbum}/>     */}
             {repos.map(i => 
-                <AlbumsCard song={i}/>    
+                <AlbumsCard song={i} />    
             )}
         </div>
     );

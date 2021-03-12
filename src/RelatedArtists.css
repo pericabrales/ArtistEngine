@@ -1,0 +1,49 @@
+#related-artists-card{
+    overflow-x: hidden;
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    width: 50%;
+}
+
+#related-artists-search{
+    overflow-x: hidden;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+#artist-image-div{
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    background-color: mintcream;
+    
+}
+
+#artist-name{
+    text-align: center;
+    right: 5%;
+}
+
+#artist-header{
+    text-align: center;
+    font-size: 60px;
+    right: 8%;
+    color: white;
+    padding-bottom: 30px;
+}
+
+h1{
+    display: block;
+    position: relative;
+    /* right: 35%; */
+}
+
+img{
+    height: 350px;
+    width: 350px;
+}
