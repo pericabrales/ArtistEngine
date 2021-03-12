@@ -14,8 +14,8 @@ import Album from './Albums'
 import RelatedArtists from './RelatedArtists';
 import AlbumSongs from './AlbumSongs.js';
 import Nav from './Nav';
+import Songs from './Songs'
 
-import Song from './Songs'
 import { getToken } from './selectors/selector';
 //import AuthToken from './AuthToken';
 
@@ -23,12 +23,6 @@ function Home(){
   return (
     <HomePage/>
   );
-}
-
-function Songs(){
-  return (
-    <Song/>
-  )
 }
 
 function Albums(){
@@ -84,36 +78,46 @@ function App() {
       <Route exact path="/">
         <Login/>
       </Route>
+
       <Route exact path="/search">
         <Home />
       </Route>
-      <Route exact path="/songs">
-        <Songs query={useQueryString().q}/>
+
+      <Route path="/songs">
+        <div>
+          <Nav/>
+          <Songs query={useQueryString().q}/>
+        </div>
       </Route>
+
       <Route path="/albums">
       <div>
           <Nav/>
           <Albums query={useQueryString().q}/>
         </div>
       </Route>
+
       <Route path="/related-artists">
         <div>
           <Nav/>
           <RelatedArtists query={useQueryString().q}/>
         </div>
       </Route>
+
       <Route path="/album-songs">
         <div>
           <Nav/>
           <AlbumSongs query={useQueryString().q}/>
         </div>
       </Route>
+
       <Route path="/album/album-songs">
         <div>
           <Nav/>
           <AlbumSongsSearch album={""}/>
         </div>
       </Route>
+
       <Route path="/redirect">
         <RedirectPage/>
       </Route>
