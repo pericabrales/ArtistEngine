@@ -111,7 +111,7 @@ function RelatedArtists({query}){
 
         return(
             <div>
-                {/* this is here for testing purposes. Currently not able to call from the App page and still use correctly*/}
+                <h3 id="page-title">Related Artists</h3>
                 <RelatedArtistsSearch curArtist={repos[2]} />
             </div>
   

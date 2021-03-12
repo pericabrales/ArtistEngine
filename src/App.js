@@ -90,8 +90,11 @@ function App() {
       <Route exact path="/songs">
         <Songs query={useQueryString().q}/>
       </Route>
-      <Route exact path="/albums">
-        <Albums query={useQueryString().q}/>
+      <Route path="/albums">
+      <div>
+          <Nav/>
+          <Albums query={useQueryString().q}/>
+        </div>
       </Route>
       <Route path="/related-artists">
         <div>

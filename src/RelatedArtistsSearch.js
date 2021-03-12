@@ -107,7 +107,6 @@ function RelatedArtistsSearch({curArtist}){
 
     return(
         <div id="related-artists-search">
-            <h1 id="artist-header">Related artists</h1>
             {repos.map(i => 
                 <RelatedArtistsCard artist={i}/>    
             )}

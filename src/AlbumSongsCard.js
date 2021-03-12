@@ -21,6 +21,9 @@ function AlbumSongsCard({song}){
     var albumID = url[4];
     console.log("album id: ", albumID);
 
+    var albumId = song.uri.substring(1).split(":");
+
+    const history = useHistory();
 
     return (
         <div id="songs-album-card">
