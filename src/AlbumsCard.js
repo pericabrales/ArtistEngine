@@ -15,7 +15,7 @@ function AlbumsCard({song}){
     const history = useHistory();
 
     return (
-        <div id="album-songs-card">
+        <div id="album-card">
             <div id="albumImage">
             <img src={song.images[0].url}  width="300" alt="albumPic"/>
             <button onClick={ () => (

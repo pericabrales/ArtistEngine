@@ -2,33 +2,44 @@ import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {getToken} from './selectors/selector';
+import {useHistory} from 'react-router-dom';
 
 import Nav from './Nav';
 
 import './index.css';
 
 
-class Home extends React.Component{
-      render(){
+
+function Home() {
+
+  const history = useHistory();
+  var str="";
+if (document.getElementById('search-input') != null) {
+  str = document.getElementById("search-input").value;
+}
+else{
+  console.log("NULL SEARCH")
+}
+
+var test = "test";
+    
         return(
             <div>
                 <Nav/>
                <div id="search-container">
-                <form action="/action_page.php" id="search-form">
-                  <input id="search-input" type="text" placeholder="Search.." name="search"/>
-                  <button id="search-icon" type="submit">
-                    <i class="fa fa-search"></i>
-                  </button>
+               <form action="/action_page.php" id="search-form">
+                  <input id="search-input" type="text" placeholder="Search.."/>
+                  
                 </form>
+                  
                </div>
 
                <div id="search-categories">
                  <div id="div-songs">
-                  <button type="submit" id="btn-songs">
-                    <NavLink id="linkSong" to='/songs'>
-                       Songs
-                     </NavLink>
-                  </button>
+                  <button  id="btn-songs" onClick={ () => (test = document.getElementById("search-input").value,
+                history.push(`/album-songs/${test}`)
+            )}>Songs
+            </button>
                  </div>
                 
                  <div id="div-albums">
@@ -58,7 +69,7 @@ class Home extends React.Component{
             </div>
   
         )
-    }
+    
 }
 
 export default Home;
