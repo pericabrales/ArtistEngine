@@ -19,7 +19,7 @@ function AlbumsCard({song}){
             <div id="albumImage">
             <img src={song.images[0].url}  width="300" alt="albumPic"/>
             <button onClick={ () => (
-                history.push(`/album-songs/${albumId[2]}`)
+                history.push(`/album/album-songs/${albumId[2]}`)
             )}>
             {song.name}
             </button>

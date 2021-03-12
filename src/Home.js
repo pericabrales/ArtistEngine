@@ -36,10 +36,12 @@ var test = "test";
 
                <div id="search-categories">
                  <div id="div-songs">
-                  <button  id="btn-songs" onClick={ () => (test = document.getElementById("search-input").value,
-                history.push(`/album-songs/${test}`)
-            )}>Songs
-            </button>
+                  <button  id="btn-songs" onClick={ () => (
+                    test = document.getElementById("search-input").value,
+                    history.push(`/songs/${test}`)
+                  )}>
+                    Songs
+                  </button>
                  </div>
                 
                  <div id="div-albums">
@@ -51,10 +53,11 @@ var test = "test";
                  </div>
 
                  <div id="div-albums-songs">
-                  <button type="submit" id="btn-album-songs">
-                    <NavLink id="linkAlbumSongs" to='/album-songs'>
+                  <button type="submit" id="btn-album-songs"onClick={ () => (
+                    test = document.getElementById("search-input").value,
+                    history.push(`/album-songs/${test}`)
+                  )}>
                       Album Songs
-                    </NavLink>
                   </button>
                  </div>
 
