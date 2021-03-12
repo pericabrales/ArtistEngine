@@ -12,6 +12,7 @@ import AlbumSongsSearch from './AlbumSongsSearch';
 import Logins from './Login'
 import Album from './Albums'
 import RelatedArtistsSearch from './RelatedArtistsSearch';
+import AlbumSongs from './AlbumSongs.js';
 import Nav from './Nav';
 
 import Song from './Songs'
@@ -99,6 +100,12 @@ function App() {
         </div>
       </Route>
       <Route path="/album-songs">
+        <div>
+          <Nav/>
+          <AlbumSongs query={useQueryString().q}/>
+        </div>
+      </Route>
+      <Route path="/album/album-songs">
         <div>
           <Nav/>
           <AlbumSongsSearch album={'6t7956yu5zYf5A829XRiHC'}/>

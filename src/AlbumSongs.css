@@ -1,4 +1,4 @@
-#album-songs-card{
+#songs-album-card{
     /* display: block; */
     position: relative;
     left: 25%;
@@ -26,7 +26,7 @@
 #track-num{
     display: inline;
     text-align: left;
-    margin: 0px;
+    margin-left: 10px;
     font-size: 20px;
 }
 
