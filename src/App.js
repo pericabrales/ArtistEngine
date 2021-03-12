@@ -87,6 +87,12 @@ function App() {
           <RelatedArtistsSearch curArtist={'246dkjvS1zLTtiykXe5h60'}/>
         </div>
       </Route>
+      <Route path="/album-songs">
+        <div>
+          <Nav/>
+          <AlbumSongsSearch album={'6t7956yu5zYf5A829XRiHC'}/>
+        </div>
+      </Route>
       <Route path="/redirect">
         <RedirectPage/>
       </Route>
