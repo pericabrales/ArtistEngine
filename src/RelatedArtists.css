@@ -20,7 +20,7 @@
     padding-right: 30px;
     padding-top: 30px;
     margin-bottom: 30px;
-    background-color: mintcream;
+    background-color: rgb(223, 250, 236);
     
 }
 
@@ -32,7 +32,7 @@
 #artist-header{
     text-align: center;
     font-size: 60px;
-    right: 8%;
+    right: 2%;
     color: white;
     padding-bottom: 30px;
 }

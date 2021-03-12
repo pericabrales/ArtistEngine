@@ -23,7 +23,7 @@ function AlbumSongsCard({song}){
 
 
     return (
-        <div id="album-songs-card">
+        <div id="songs-album-card">
             <div id="song-num-name">
                 <h2 id="track-num">{song.track_number}.</h2>
                 <h1 id="track-name">{song.name}</h1>
