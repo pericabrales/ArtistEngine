@@ -246,3 +246,13 @@ code {
   -webkit-text-stroke-color: #0099cc;
   font-size: 40px;
 }
+#albumButton{
+  font-size: 25px;
+  margin: 0 auto;
+  align-items: center;
+  position: relative;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: #a64dff;
+  border: 7px solid #e6b800;
+}

@@ -18,12 +18,14 @@ function AlbumSearch({album}){
     const token = useSelector(getToken);
     console.log("token found using selector: ", token);
     console.log("album id: ", album);
+
         //history so things can be pushed onto the stack
         const history = useHistory();
         //the var and setter for the query we're going to pass into the API
         const [ curQuery, setCurQuery ] = useState(album || "");
         //repos is what we'll use to render something new to the page
         const [repos, setRepos] = useState([]);
+        const [albumInfo, setAlbumInfo] = useState([]);
         //loadingState will be used to keep track of if the data is still loading
         //need for the progress bar
         const [loadingState, setLoadingState] = useState(false); //start at false until search is pressed
@@ -42,6 +44,7 @@ function AlbumSearch({album}){
         async function fetchAlbumSongs(){
             //will hold the js object that is returned from the json file
             let jsResponse = {};
+            
             //because the search button has been pressed and we're getting information, set the loading bar to true
             setLoadingState(true);
             //gotta set error to false because it could be left over from a previous error
@@ -66,6 +69,7 @@ function AlbumSearch({album}){
                     //dispatch(albumSongsError(e));
                 });
                 console.log("full api call: ", jsResponse);
+                
             }catch(e){
                 if(e instanceof DOMException){
                     //show the request has been aported
@@ -80,6 +84,7 @@ function AlbumSearch({album}){
             if(!ignore){
                 //set our response to the stuff we got in the json
                 setRepos(jsResponse || []);
+               
                 //set back to false because we have our stuff
                 setLoadingState(false);
                 console.log("==repos: ", jsResponse);

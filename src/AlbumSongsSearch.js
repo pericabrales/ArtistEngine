@@ -150,7 +150,6 @@ function AlbumSongsSearch({album}){
 
     return(
         <div id="album-songs-search">
-            <h1 id="album-name">Songs on </h1>
             {repos.map(i => 
                 <AlbumSongsCard song={i}/>    
             )}

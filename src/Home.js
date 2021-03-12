@@ -38,24 +38,25 @@ var test = "test";
                  <div id="div-songs">
                   <button  id="btn-songs" onClick={ () => (
                     test = document.getElementById("search-input").value,
-                    history.push(`/songs/${test}`)
+                    test ? history.push(`/songs/${test}`) : alert("Fill out the search field")
                   )}>
                     Songs
                   </button>
                  </div>
                 
                  <div id="div-albums">
-                  <button type="submit" id="btn-albums">
-                       <NavLink id="linkAlbum" to='/albums'>
-                            Albums
-                            </NavLink>
+                 <button type="submit" id="btn-artists" onClick={() => (
+                    test = document.getElementById("search-input").value,
+                    test ? history.push(`/albums/${test}`) : alert("Fill out the search field")
+                  )}>
+                    Albums
                   </button>
                  </div>
 
                  <div id="div-albums-songs">
                   <button type="submit" id="btn-album-songs"onClick={ () => (
                     test = document.getElementById("search-input").value,
-                    history.push(`/album-songs/${test}`)
+                    test ? history.push(`/album-songs/${test}`) : alert("Fill out the search field")
                   )}>
                       Album Songs
                   </button>
@@ -64,7 +65,7 @@ var test = "test";
                 <div id="div-artists">
                   <button type="submit" id="btn-artists" onClick={() => (
                     test = document.getElementById("search-input").value,
-                    history.push(`/related-artists/${test}`)
+                    test ? history.push(`/related-artists/${test}`) : alert("Fill out the search field")
                   )}>
                     Related Artists
                   </button>

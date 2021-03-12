@@ -117,6 +117,8 @@ function AlbumSongs({query}){
 
     return(
         <div>
+            <h3 id="page-title">Song Gallery</h3>
+
             {/* album id is at the 3rd index of repos (repos[2]) */}
             <AlbumSongsSearch album={repos[2]}/>
         </div>
