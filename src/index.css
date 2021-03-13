@@ -157,7 +157,7 @@ code {
   text-align: center;
 }
 
-#div-songs, #div-albums, #div-artists, #div-album-songs {
+#div-songs, #div-albums, #div-artists, #div-albums-songs {
   display: inline;
   flex-wrap: wrap;
   justify-content: center;
@@ -172,6 +172,19 @@ code {
   color: #e6b800;
   padding: 5px;
   box-shadow: 5px 5px #401775;
+}
+
+#btn-songs:hover, #btn-albums:hover, #btn-artists:hover, #btn-album-songs:hover {
+  background-color: #0099cc;
+  border: 4px solid #e6b800;
+  font-family: 'Anton', sans-serif;
+  font-size: 30px;
+  color: #e6b800;
+  padding: 5px;
+  box-shadow: 7px 7px #401775;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color:  #00ff99;
 }
 
 #album-songs-card {
