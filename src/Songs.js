@@ -110,7 +110,7 @@ function Songs({query}){
 
         return(
             <div>
-                <h3 id="page-title">Top Trakcs</h3>
+                <h3 id="page-title">Top Tracks</h3>
                 <SongSearch songs={repos[2]} />
             </div>
   

@@ -240,7 +240,7 @@ code {
   justify-content: center;
 }
 
-/* #page-title {
+#page-title {
   align-items: center;
   text-align: center;
   position: relative;
@@ -250,7 +250,7 @@ code {
   -webkit-text-stroke-width:2px;
   -webkit-text-stroke-color: #0099cc;
   font-size: 40px;
-} */
+}
 #albumButton{
   font-size: 25px;
   margin: 0 auto;
