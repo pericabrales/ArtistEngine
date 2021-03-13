@@ -40,7 +40,7 @@ var test = "test";
                     test = document.getElementById("search-input").value,
                     test ? history.push(`/songs/${test}`) : alert("Fill out the search field")
                   )}>
-                    Songs
+                    Popular Tracks
                   </button>
                  </div>
                 
@@ -49,7 +49,7 @@ var test = "test";
                     test = document.getElementById("search-input").value,
                     test ? history.push(`/albums/${test}`) : alert("Fill out the search field")
                   )}>
-                    Albums
+                    Artist's Albums
                   </button>
                  </div>
 
