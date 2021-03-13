@@ -182,6 +182,11 @@ code {
   border: 14px solid #0099cc;
 
 }
+
+#album-card {
+  text-align: center;
+}
+
 #albumImage{
   float: left;
   width: 30%;

@@ -36,7 +36,7 @@ var test = "test";
 
                <div id="search-categories">
                  <div id="div-songs">
-                  <button  id="btn-songs" onClick={ () => (
+                  <button  type="submit" id="btn-songs" onClick={ () => (
                     test = document.getElementById("search-input").value,
                     test ? history.push(`/songs/${test}`) : alert("Fill out the search field")
                   )}>
