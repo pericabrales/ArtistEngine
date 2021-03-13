@@ -157,7 +157,7 @@ code {
   text-align: center;
 }
 
-#div-songs, #div-albums, #div-artists, #div-album-songs {
+#div-songs, #div-albums, #div-artists, #div-albums-songs {
   display: inline;
   flex-wrap: wrap;
   justify-content: center;
